@@ -9,14 +9,14 @@ requires = [
 
 setuptools.setup(
     name="passbolt-api",
-    version="0.0.3",
+    version="0.0.4",
     author="XWiki SAS Development Team",
     author_email="pypi@xwiki.com",
     description="Provides API bindings for the Passbolt API",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/xwikisas/passbolt-api",
-    packages=setuptools.find_packages(),
+    packages=['passboltapi'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "Intended Audience :: Developers",
