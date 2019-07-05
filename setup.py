@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 requires = [
-    'requests_gpgauthlib==0.1.2'
+    'requests_gpgauthlib>=0.1.2'
 ]
 
 setuptools.setup(
@@ -23,4 +23,5 @@ setuptools.setup(
         "License :: OSI Approved :: GNU Lesser General Public License v2 (LGPLv2)",
         "Operating System :: OS Independent",
     ],
+    install_requires=requires
 )
