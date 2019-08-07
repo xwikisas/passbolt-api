@@ -13,10 +13,12 @@ class PassboltResourcesAPI(PassboltAPIEndpoint):
                 params=params
             )
 
+    # Uses API v2
     def post(self, data=None):
         return self.manager.post(
             self.manager.buildURI('/resources.json'),
-            data=data
+            data=data,
+            params={'api-version': 'v2'}
         )
 
     def put(self, resourceID, data=None):

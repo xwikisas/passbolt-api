@@ -1,3 +1,5 @@
+import logging
+
 from gpgauth import GPGAuthSessionWrapper
 
 from requests.utils import dict_from_cookiejar
@@ -15,10 +17,13 @@ class PassboltAPIError(AssertionError):
 from passboltapi.auth import PassboltAuthAPI
 from passboltapi.groups import PassboltGroupsAPI
 from passboltapi.resources import PassboltResourcesAPI
+from passboltapi.share import PassboltShareAPI
 from passboltapi.users import PassboltUsersAPI
 
 
 class PassboltAPI:
+    logger = logging.getLogger('PassboltAPI')
+
     def __init__(self, apiContext={}):
         self.apiContext = apiContext
         self.uri = self.apiContext['uri']
@@ -27,6 +32,7 @@ class PassboltAPI:
         # Initialize the endpoints
         self.auth = PassboltAuthAPI(self)
         self.resources = PassboltResourcesAPI(self)
+        self.share = PassboltShareAPI(self)
         self.users = PassboltUsersAPI(self)
         self.groups = PassboltGroupsAPI(self)
 
